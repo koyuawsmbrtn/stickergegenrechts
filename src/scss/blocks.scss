@@ -3,6 +3,8 @@
     align-items: center;
     gap: 2rem;
     flex-direction: column;
+    margin-left: -20px;
+    padding: 20px;
 
     @media screen and (min-width: 768px) {
         flex-direction: row;
@@ -69,6 +71,7 @@
         flex-direction: column-reverse;
     }
     .block {
-        width: calc(100% - 10px);
+        width: calc(100% - 40px);
+        padding: 0px;
     }
 }
