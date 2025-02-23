@@ -1,0 +1,31 @@
+---
+import Block1 from "../components/block1.astro";
+import Block2 from "../components/block2.astro";
+import Contact from "../components/contact.astro";
+import Democalendar from "../components/democalendar.astro";
+import Intro from "../components/intro.astro";
+import Spacer from "../components/spacer.astro";
+import Stats from "../components/stats.astro";
+import Why from "../components/why.astro";
+import Layout from "../layouts/page.astro";
+---
+
+<Layout>
+    <Spacer />
+    <Intro />
+    <Spacer />
+    <div class="container center">
+        <a name="about" />
+        <h1 class="header">Wer wir sind</h1>
+    </div>
+    <Block1 />
+    <Spacer />
+    <Block2 />
+    <Spacer />
+    <Why />
+    <Spacer />
+    <Democalendar />
+    <Spacer />
+    <Stats />
+    <Spacer />
+</Layout>

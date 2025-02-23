@@ -1,0 +1,67 @@
+[
+    {
+        "name": "CSD Hannover",
+        "description": "",
+        "date": "2025-06-07",
+        "url": "https://www.csd-termine.de/deutschland/csd-pride-hannover.html",
+        "actions": {
+            "stickers": true,
+            "camera": true,
+            "music": true
+        },
+        "location": "Hannover",
+        "visible": true
+    },
+    {
+        "name": "CSD Emden",
+        "description": "",
+        "date": "2025-06-14",
+        "url": "https://www.csd-termine.de/deutschland/csd-pride-emden.html",
+        "actions": {
+            "stickers": true,
+            "camera": true,
+            "music": true
+        },
+        "location": "Emden",
+        "visible": true
+    },
+    {
+        "name": "CSD Kiel",
+        "description": "",
+        "date": "2025-07-12",
+        "url": "https://www.csd-termine.de/deutschland/csd-pride-kiel.html",
+        "actions": {
+            "stickers": true,
+            "camera": true,
+            "music": true
+        },
+        "location": "Kiel",
+        "visible": true
+    },
+    {
+        "name": "CSD Rostock",
+        "description": "",
+        "date": "2025-07-19",
+        "url": "https://www.csd-termine.de/deutschland/csd-pride-rostock.html",
+        "actions": {
+            "stickers": true,
+            "camera": true,
+            "music": true
+        },
+        "location": "Rostock",
+        "visible": true
+    },
+    {
+        "name": "CSD Hamburg",
+        "description": "",
+        "date": "2025-08-02",
+        "url": "https://www.csd-termine.de/deutschland/csd-pride-hamburg.html",
+        "actions": {
+            "stickers": true,
+            "camera": true,
+            "music": true
+        },
+        "location": "Hamburg",
+        "visible": true
+    }
+]

@@ -1,0 +1,18 @@
+<div class="container-white">
+	<video src="/intro.mp4" id="intro" autoplay muted />
+</div>
+<script>
+	const intro = document.getElementById('intro');
+	intro?.addEventListener('ended', () => {
+		location.href = '/home';
+	});
+</script>
+
+<noscript>
+	<style is:inline>
+		#intro {
+			display: none;
+		}
+	</style>
+	<p style="color:red;">Bitte aktiviere JavaScript :3</p>"
+</noscript>

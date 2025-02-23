@@ -1,0 +1,108 @@
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #121212;
+        color: #e0e0e0;
+    }
+
+    nav {
+        background-color: #1e1e1e;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+
+        a {
+            color: #e0e0e0;
+        }
+    }
+
+    .social-button-img {
+        color: #e0e0e0;
+
+        &:hover {
+            color: #ffffff;
+        }
+    }
+
+    #scroll-to-top {
+        color: #e0e0e0;
+    }
+
+    .block-left, .block-right {
+        .text {
+            h1, h2 {
+                color: #e0e0e0;
+            }
+        }
+    }
+
+    .container {
+        h1, h2, p {
+            color: #e0e0e0;
+        }
+    }
+
+    .btn {
+        background-color: #e0e0e0 !important;
+        color: #333 !important;
+    }
+
+    .btn:hover {
+        background-color: #ffffff !important;
+    }
+
+    .contact-form-container {
+        background-color: #1e1e1e !important;
+        color: #fff !important;
+    }
+
+    input, textarea {
+        background-color: #2d2d2d;
+        border-color: #404040;
+        color: #e0e0e0;
+
+        &:focus {
+            outline: 1px solid #606060;
+        }
+    }
+
+    button {
+        background-color: #404040;
+
+        &:hover {
+            background-color: #505050;
+        }
+    }
+
+    footer {
+        background-color: #1e1e1e !important;
+        box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.3) !important;
+
+        .footer-content {
+            .footer-links {
+                li {
+                    a {
+                        color: #a0a0a0 !important;
+
+                        &:hover {
+                            background: linear-gradient(90deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8f00ff) !important;
+                            -webkit-background-clip: text !important;
+                            background-clip: text !important;
+                            color: transparent !important;
+                        }
+                    }
+                }
+            }
+
+            .copyright {
+                color: #a0a0a0 !important;
+            }
+        }
+    }
+}
+
+.container-white {
+    background-color: #fff;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+}

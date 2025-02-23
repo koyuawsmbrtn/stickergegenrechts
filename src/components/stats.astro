@@ -1,0 +1,99 @@
+---
+import stats from "../json/stats.json";
+---
+
+<div class="container">
+  <a name="stats"></a>
+  <h1 class="center">Statistiken</h1>
+  <p class="center">Allein diesen Monat haben wir...</p>
+  <div class="stats">
+    <div class="stats__body" id="statcounter">
+      {
+        stats.map((stat) => {
+          return (
+            <div class="stats__body__stat">
+              <div class="stats__body__stat__title">{stat.title}</div>
+              <div class="stats__body__stat__value counter">{stat.value}</div>
+            </div>
+          );
+        })
+      }
+    </div>
+  </div>
+  <p class="center"><small>*Das Geld geht in Sticker und unsere Ausrüstung</small></p>
+</div>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const animationDuration = 2000;
+    const frameDuration = 1000 / 60;
+    const totalFrames = Math.round(animationDuration / frameDuration);
+    const easeOutQuad = (t) => t * (2 - t);
+
+    const animateCountUp = (el) => {
+      let frame = 0;
+      const countTo = parseInt(el.innerHTML.replaceAll("€", "").replaceAll(" ", ""), 10);
+      const counter = setInterval(() => {
+        frame++;
+        const progress = easeOutQuad(frame / totalFrames);
+        const currentCount = Math.round(countTo * progress);
+
+        if (parseInt(el.innerHTML, 10) !== currentCount) {
+          if (el.innerHTML.includes("€")) {
+            el.innerHTML = `${currentCount} €`;
+          } else {
+            el.innerHTML = currentCount;
+          }
+        }
+
+        if (frame === totalFrames) {
+          clearInterval(counter);
+        }
+      }, frameDuration);
+    };
+
+    const runAnimations = () => {
+      const countupEls = document.querySelectorAll(".counter");
+      countupEls.forEach(animateCountUp);
+    };
+
+    window.setInterval(() => {
+      const statcounter = document.getElementById("statcounter");
+      if (statcounter.getBoundingClientRect().top <= window.innerHeight && !statcounter.hasAttribute('data-animated')) {
+        runAnimations();
+        statcounter.setAttribute('data-animated', 'true');
+      }
+    }, 20);
+  });
+</script>
+
+<style>
+  .stats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .stats__body {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  .stats__body__stat {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+  }
+  .stats__body__stat__title {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  .stats__body__stat__value {
+    font-size: 3rem;
+    font-weight: bold;
+  }
+</style>

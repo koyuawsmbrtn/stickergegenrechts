@@ -1,0 +1,8 @@
+---
+import { Icon } from 'astro-icon/components'
+const { service, href } = Astro.props;
+---
+
+<a href={href} target="_blank" rel="noopener noreferrer" class="social-button">
+    <Icon name={service} class="social-button-img" />
+</a>

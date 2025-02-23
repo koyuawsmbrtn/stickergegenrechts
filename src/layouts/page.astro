@@ -1,0 +1,15 @@
+---
+import Layout from "./base.astro";
+import Menu from "../components/menu.astro";
+import Scrolltotop from "../components/scrolltotop.astro";
+import Footer from "../components/footer.astro";
+---
+
+<Layout>
+  <Scrolltotop />
+  <Menu />
+  <main>
+    <slot />
+  </main>
+  <Footer />
+</Layout>

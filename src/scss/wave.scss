@@ -1,0 +1,27 @@
+@keyframes wave {
+    0% {
+        transform: rotate(0deg);
+    }
+    20% {
+        transform: rotate(20deg);
+    }
+    40% {
+        transform: rotate(-10deg);
+    }
+    60% {
+        transform: rotate(15deg);
+    }
+    80% {
+        transform: rotate(-5deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.wave-emoji {
+    display: inline-block;
+    animation: wave 2s ease-in-out;
+    animation-iteration-count: 1;
+    transform-origin: 70% 70%;
+}

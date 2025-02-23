@@ -1,0 +1,49 @@
+---
+import demos from "../json/demos.json";
+import { formatDate } from "../utils/date.ts";
+const demos_filtered = demos.filter((demo) => {
+  if (demo.visible && new Date(demo.date) >= new Date()) {
+    return demo;
+  }
+});
+---
+
+<div class="container">
+  <a name="democalendar" />
+  <h1 class="center">Demokalender</h1>
+  {
+    demos_filtered.length === 0 && (
+      <div class="center">
+        <p><i>Keine Demos geplant :/</i></p>
+      </div>
+    )
+  }
+  <div class="calendar">
+    <div class="calendar__body">
+      {
+        demos_filtered.map((demo) => {
+          const date = new Date(demo.date);
+          return (
+            <div class="calendar__body__day">
+              <div class="calendar__body__day__date">
+                {formatDate(demo.date)}
+              </div>
+              <div class="calendar__body__day__title">{demo.name}</div>
+              <div class="calendar__body__day__location">{demo.location}</div>
+              <div class="calendar__body__day__events">
+                {demo.actions.camera && <span>📷</span>}
+                {demo.actions.stickers && <span>📄</span>}
+                {demo.actions.music && <span>🎵</span>}
+              </div>
+              <div class="calendar__body__utils">
+                <a href={demo.url} class="btn" target="_blank">
+                  Mehr Informationen
+                </a>
+              </div>
+            </div>
+          )
+        })
+      }
+    </div>
+  </div>
+</div>

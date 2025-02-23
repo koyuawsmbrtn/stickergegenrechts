@@ -1,0 +1,27 @@
+---
+import { Icon } from 'astro-icon/components'
+---
+
+<span id="scroll-to-top" style="display: none;">
+    <Icon name="scroll" class="scroll-to-top" />
+</span>
+
+<script>
+    const scrollToTop = document.getElementById('scroll-to-top');
+    scrollToTop?.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+    const body = document.querySelector('body');
+    window.addEventListener('scroll', () => {
+        if (scrollToTop) {
+            if (window.scrollY > 100) {
+                scrollToTop.style.display = 'block';
+            } else {
+                scrollToTop.style.display = 'none';
+            }
+        }
+    });
+</script>
