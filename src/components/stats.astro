@@ -66,34 +66,3 @@ import stats from "../json/stats.json";
     }, 20);
   });
 </script>
-
-<style>
-  .stats {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .stats__body {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-  }
-  .stats__body__stat {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-    border-radius: 1rem;
-    background-color: var(--color-primary);
-    color: var(--color-white);
-  }
-  .stats__body__stat__title {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  .stats__body__stat__value {
-    font-size: 3rem;
-    font-weight: bold;
-  }
-</style>

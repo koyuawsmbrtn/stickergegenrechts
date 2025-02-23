@@ -68,4 +68,7 @@
     .block-right {
         flex-direction: column-reverse;
     }
+    .block {
+        width: calc(100% - 10px);
+    }
 }

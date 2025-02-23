@@ -1,4 +1,5 @@
 ---
+import { Icon } from "astro-icon/components";
 import demos from "../json/demos.json";
 import { formatDate } from "../utils/date.ts";
 const demos_filtered = demos.filter((demo) => {
@@ -37,7 +38,7 @@ const demos_filtered = demos.filter((demo) => {
               </div>
               <div class="calendar__body__utils">
                 <a href={demo.url} class="btn" target="_blank">
-                  Mehr Informationen
+                  Mehr Infos <Icon name="chevron-right" class="calendar__body__utils__icon" />
                 </a>
               </div>
             </div>

@@ -1,0 +1,36 @@
+.stats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.stats__body {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.stats__body__stat {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.stats__body__stat__title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.stats__body__stat__value {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .stats__body {
+        grid-template-columns: 1fr;
+    }
+}

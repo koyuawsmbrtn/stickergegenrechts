@@ -18,6 +18,7 @@
     padding: 1rem;
     border-radius: 0.5rem;
     width: 90%;
+    min-width: 180px;
 }
 
 .calendar__body__day__date {
@@ -46,9 +47,13 @@
     justify-content: flex-end;
 }
 
-@media (prefers-color-scheme: dark) {
-    .calendar__body__day {
-        background-color: #303030;
-        color: #f0f0f0;
+.calendar__body__utils__icon {
+    vertical-align: middle;
+    margin-top: -3px;
+}
+
+@media (max-width: 768px) {
+    .calendar {
+        overflow-x: auto;
     }
 }
