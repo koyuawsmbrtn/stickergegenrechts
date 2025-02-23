@@ -2,7 +2,15 @@
 
 html {
     scroll-behavior: smooth;
-    overflow-x: hidden !important;
+}
+
+@media (max-width: 768px) {
+    html {
+        overflow-x: hidden;
+    }
+    #scroll-to-top {
+        display: none !important;
+    }
 }
 
 body {
@@ -16,7 +24,7 @@ body {
 }
 
 .container {
-    width: 80%;
+    width: 90%;
     max-width: 1200px;
     margin: 0 auto;
     overflow: hidden;
