@@ -8,8 +8,17 @@
         background-color: #1e1e1e;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 
-        a {
-            color: #e0e0e0;
+        li {
+            a {
+                color: #fff;
+
+                &:hover {
+                    background: linear-gradient(90deg, #ff0000bb, #ff7f00bb, #ffff00bb, #00ff00bb, #0000ffbb, #4b0082bb, #8f00ffbb);
+                    animation: rainbow 5s linear infinite;
+                    color: #fff !important;
+                    border-radius: 30px;
+                }
+            }
         }
     }
 
@@ -25,16 +34,22 @@
         color: #e0e0e0;
     }
 
-    .block-left, .block-right {
+    .block-left,
+    .block-right {
         .text {
-            h1, h2 {
+
+            h1,
+            h2 {
                 color: #e0e0e0;
             }
         }
     }
 
     .container {
-        h1, h2, p {
+
+        h1,
+        h2,
+        p {
             color: #e0e0e0;
         }
     }
@@ -53,7 +68,8 @@
         color: #fff !important;
     }
 
-    input, textarea {
+    input,
+    textarea {
         background-color: #2d2d2d;
         border-color: #404040;
         color: #e0e0e0;

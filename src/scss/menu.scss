@@ -21,39 +21,37 @@ nav {
         &:last-child {
             margin-right: 0;
         }
-    }
 
-    a {
-        display: block;
-        padding: 0.5rem 1rem;
-        text-decoration: none;
-        color: #333;
-        transition: color 0.3s ease;
-        &:hover {
-            background: linear-gradient(90deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8f00ff);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            animation: rainbow 5s linear infinite;
-        }
-
-        &.active {
+        a {
+            display: block;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            color: #333;
+            transition: color 0.3s ease;
             font-weight: bold;
-            background: linear-gradient(90deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8f00ff);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
 
-    @keyframes rainbow {
-        0% { background-position: 0% 50%; }
-        100% { background-position: 200% 50%; }
-    }
+            &:hover {
+                background: linear-gradient(90deg, #ff0000bb, #ff7f00bb, #ffff00bb, #00ff00bb, #0000ffbb, #4b0082bb, #8f00ffbb);
+                animation: rainbow 5s linear infinite !important;
+                color: #333 !important;
+                border-radius: 30px;
+            }
+
+            @keyframes rainbow {
+                0% {
+                    background-position: 0% 50%;
+                }
+
+                100% {
+                    background-position: 200% 50%;
+                }
+            }
+        }
     }
 
     @media (max-width: 768px) {
         flex-direction: column;
-        
+
         #logo {
             margin-right: 0;
             margin-bottom: 1rem;
