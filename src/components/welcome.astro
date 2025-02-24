@@ -4,8 +4,14 @@
 <script>
 	const intro = document.getElementById('intro');
 	intro?.addEventListener('ended', () => {
-		location.href = '/home';
+		localStorage.setItem('introv1', 'true');
+		window.setTimeout(() => {
+			location.href = '/home';
+		}, 100);
 	});
+	if (localStorage.getItem('introv1') === 'true') {
+		location.href = '/home';
+	}
 </script>
 
 <noscript>
