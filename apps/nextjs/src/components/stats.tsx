@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
 import { useState, useEffect } from 'react'
 import { client } from '@/sanity/client'
 import { motion } from 'framer-motion'
@@ -20,7 +18,7 @@ interface StatDisplay {
   suffix?: string
 }
 
-const CountingNumber = ({ value, prefix = '', suffix = '' }) => {
+const CountingNumber = ({ value, prefix = '', suffix = '' }: { value: number | string, prefix: string, suffix: string }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -125,8 +123,8 @@ export default function Stats() {
             <div className="text-3xl font-bold">
               <CountingNumber
                 value={stat.value}
-                prefix={stat.prefix}
-                suffix={stat.suffix}
+                prefix={stat.prefix || ''}
+                suffix={stat.suffix || ''}
               />
             </div>
           </motion.div>
