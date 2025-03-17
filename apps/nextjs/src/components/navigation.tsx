@@ -173,7 +173,7 @@ export function Navigation() {
                     {isActive(page.slug.toString()) && (
                       <motion.div
                         layoutId="active-page"
-                        className="absolute inset-0 bg-accent rounded-md"
+                        className="absolute inset-0 bg-accent rounded-3xl"
                         transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                       />
                     )}
