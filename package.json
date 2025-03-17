@@ -1,0 +1,15 @@
+{
+  "name": "koyuweb",
+  "packageManager": "bun@1.2.5",
+  "private": true,
+  "scripts": {
+    "dev": "turbo dev"
+  },
+  "workspaces": [
+    "apps/*"
+  ],
+  "dependencies": {
+    "@heroicons/react": "v1",
+    "turbo": "^2.4.4"
+  }
+}
