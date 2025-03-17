@@ -4,6 +4,7 @@ import { Skeleton } from '@/components/ui/skeleton'
 import { format } from 'date-fns'
 import { de } from 'date-fns/locale'
 import { DocumentIcon, MusicalNoteIcon, CameraIcon } from '@heroicons/react/24/outline'
+import Link from 'next/link'
 
 interface Event {
   _id: string
@@ -60,7 +61,8 @@ export default function Events() {
             actions
           }
         `)
-        setEvents(data)
+        const filteredData = data.filter(event => new Date(event.date) >= new Date())
+        setEvents(filteredData)
       } catch (err) {
         console.error("Error fetching events:", err)
         setError("Failed to load events")
@@ -101,14 +103,14 @@ export default function Events() {
             <div>
               <h3 className="text-xl font-semibold mb-2">
                 {event.url ? (
-                  <a
+                  <Link
                     href={event.url}
-                    target="_blank"
+                    target={event.url.startsWith('http') ? '_blank' : '_self'}
                     rel="noopener noreferrer"
                     className="hover:underline"
                   >
                     {event.title}
-                  </a>
+                  </Link>
                 ) : (
                   event.title
                 )}

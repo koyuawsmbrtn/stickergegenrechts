@@ -133,7 +133,10 @@
     font-size: var(--text-3xl);
     border-bottom: 1px solid var(--border);
     padding-bottom: 0.5rem;
-    margin-bottom: 2rem;
+  }
+
+  h2:not(.text-muted-foreground) {
+    margin-top: 3rem;
   }
 
   h3 {

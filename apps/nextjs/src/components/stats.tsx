@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import { useState, useEffect } from 'react'
 import { client } from '@/sanity/client'
 import { motion } from 'framer-motion'
