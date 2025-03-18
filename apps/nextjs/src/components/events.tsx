@@ -5,6 +5,7 @@ import { format } from 'date-fns'
 import { de } from 'date-fns/locale'
 import { DocumentIcon, MusicalNoteIcon, CameraIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
+import { HoverPopover } from "@/components/ui/popover"
 
 interface Event {
   _id: string
@@ -30,16 +31,29 @@ const getActionIcon = (action: string) => {
 }
 
 const translateAction = (action: string) => {
-    switch (action) {
-        case 'stickers':
-        return 'Sticker'
-        case 'music':
-        return 'Musik'
-        case 'camera':
-        return 'Sofortbilder'
-        default:
-        return null
-    }
+  switch (action) {
+    case 'stickers':
+      return 'Sticker'
+    case 'music':
+      return 'Musik'
+    case 'camera':
+      return 'Sofortbilder'
+    default:
+      return null
+  }
+}
+
+const getColor = (action: string) => {
+  switch (action) {
+    case 'stickers':
+      return 'bg-yellow-500 text-black'
+    case 'music':
+      return 'bg-red-500'
+    case 'camera':
+      return 'bg-blue-500'
+    default:
+      return 'bg-gray-500'
+  }
 }
 
 export default function Events() {
@@ -133,13 +147,20 @@ export default function Events() {
             {event.actions && event.actions.length > 0 && (
               <div className="flex gap-3 md:self-start">
                 {event.actions.map((action) => (
-                  <div
+                  <HoverPopover
                     key={action}
-                    className="p-2 rounded-full bg-muted hover:bg-muted/80 transition-colors"
-                    title={translateAction(action) || action}
-                  >
-                    {getActionIcon(action)}
-                  </div>
+                    trigger={
+                        <div
+                        className={`p-2 rounded-full bg-muted transition-colors ${action === 'stickers' ? 'hover:bg-yellow-500 hover:text-black' : action === 'music' ? 'hover:bg-red-500' : action === 'camera' ? 'hover:bg-blue-500' : 'hover:bg-gray-500'}`}
+                        >
+                        {getActionIcon(action)}
+                        </div>
+                    }
+                    content={
+                      <p>{translateAction(action) || action}</p>
+                    }
+                    className={`w-auto ${getColor(action)} mt-1`}
+                  />
                 ))}
               </div>
             )}
