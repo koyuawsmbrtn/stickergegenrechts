@@ -245,7 +245,7 @@ export default function Avatars() {
                       key={`${social.slug}-${social.url}`}
                       href={social.url}
                       target="_blank"
-                      rel="noopener noreferrer"
+                      rel="noopener noreferrer me"
                       className="group"
                       variants={{
                         hidden: { opacity: 0, scale: 0.8 },
