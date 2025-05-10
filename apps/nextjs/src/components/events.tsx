@@ -141,7 +141,7 @@ export default function Events() {
                 )}
               </div>
               {event.description && (
-                <p className="text-muted-foreground">{event.description}</p>
+                <p className="text-muted-foreground" dangerouslySetInnerHTML={{__html: event.description.replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>")}} />
               )}
             </div>
             {event.actions && event.actions.length > 0 && (
