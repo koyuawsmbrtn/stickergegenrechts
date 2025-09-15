@@ -29,7 +29,7 @@ export default async function handler(
     };
     await resend.emails.send({
         from: 'stickergegenrechts.de <no-reply@stickergegenrechts.de>',
-        to: ['me@koyu.space', 'me@subrapier.space'],
+        to: ['me@koyu.space', 'me@subrapier.space', 'Laura.Werner.2006@web.de'],
         ...template,
     });
     res.status(302).setHeader('Location', '/contact-success').end();
